@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 class Escritor(models.Model):
@@ -18,4 +19,3 @@ class Articulo(models.Model):
     subtitulo = models.TextField()
     desarrollo = models.TextField()
     autor = models.CharField(max_length=256)
-    fecha_publicacion = models.DateField()

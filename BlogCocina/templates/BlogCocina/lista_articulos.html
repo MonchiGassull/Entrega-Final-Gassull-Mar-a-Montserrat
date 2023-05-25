@@ -1,0 +1,42 @@
+{% extends "BlogCocina/base.html" %}
+
+{% block contenido %}
+<section>
+    <div>
+        <h1>Lista de Artículos</h1>
+
+        <a href="{% url 'crear-articulos' %}">Crear Artículo</a>
+        <br>
+
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Subtítulo</th>
+                    <td>Ver</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
+                </tr>
+                {% for articulo in object_list %}
+                <tr>
+                    <td>{{ articulo.id }}</td>
+                    <td>{{ articulo.titulo }}</td>
+                    <td>{{ articulo.subtitulo }}</td>
+                    <td>
+                        Ver
+                    </td>
+                    <td>
+                        <a href="{% url 'editar-articulos' articulo.id %}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'eliminar-articulos' articulo.id %}">Eliminar</a>
+                    </td>   
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock contenido %}
