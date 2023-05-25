@@ -12,16 +12,14 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <th>ID</th>
                     <th>Título</th>
-                    <th>Subtítulo</th>
+                    <th>Descripción</th>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 {% for articulo in object_list %}
                 <tr>
-                    <td>{{ articulo.id }}</td>
                     <td>{{ articulo.titulo }}</td>
                     <td>{{ articulo.subtitulo }}</td>
                     <td>
