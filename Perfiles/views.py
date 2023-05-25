@@ -6,8 +6,9 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.views.generic import UpdateView
+from Perfiles.forms import UserRegisterForm, UserUpdateForm, AvatarFormulario
 
-from Perfiles.forms import UserRegisterForm
 
 def registro(request):
    if request.method == "POST":
@@ -53,3 +54,29 @@ def login_view(request):
 
 class CustomLogoutView(LogoutView):
    template_name = 'Perfiles/logout.html'
+
+class MiPerfilUpdateView(LoginRequiredMixin, UpdateView):
+   form_class = UserUpdateForm
+   success_url = reverse_lazy('inicio')
+   template_name = 'Perfiles/formulario_perfil.html'
+
+   def get_object(self, queryset=None):
+       return self.request.user
+   
+def agregar_avatar(request):
+  if request.method == "POST":
+      formulario = AvatarFormulario(request.POST, request.FILES) 
+      if formulario.is_valid():
+          avatar = formulario.save()
+          avatar.user = request.user
+          avatar.save()
+          url_exitosa = reverse('inicio')
+          return redirect(url_exitosa)
+  else:
+      formulario = AvatarFormulario()
+  return render(
+      request=request,
+      template_name="Perfiles/formulario_avatar.html",
+      context={'form': formulario},
+  )
+

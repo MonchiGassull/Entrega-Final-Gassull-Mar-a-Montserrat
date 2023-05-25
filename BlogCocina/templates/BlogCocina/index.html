@@ -2,4 +2,5 @@
 
 {% block contenido %}
 <h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
+<img src="{{ user.avatar.imagen.url }}" />
 {% endblock contenido %}
