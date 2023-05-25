@@ -1,0 +1,17 @@
+{% extends "BlogCocina/base.html" %}
+
+{% block subtitulo %}Editar Artículo{% endblock subtitulo%}
+
+{% block contenido %}
+
+<p>
+    <strong>Título:</strong> {{object.titulo}}
+    <strong>Subtítulo:</strong> {{object.subtitulo}}
+    <strong>Autor:</strong> {{object.autor}}
+    <strong>Receta:</strong> {{object.desarrollo}}
+</p>
+
+<br>
+<a href="{% url 'lista-articulos' %}">Volver a Lista de Recetas</a>
+
+{% endblock contenido %}

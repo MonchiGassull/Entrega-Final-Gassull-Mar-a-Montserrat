@@ -23,5 +23,5 @@ urlpatterns = [
     path("articulos/<int:pk>/", ArticuloDetailView.as_view(), name='ver-articulos'),
     path("crear-articulos/", ArticuloCreateView.as_view(), name='crear-articulos'),
     path("editar-articulos/<int:pk>/", ArticuloUpdateView.as_view(), name='editar-articulos'),
-    path("elminar-articulos/<int:pk>/", ArticuloDeleteView.as_view(), name='eliminar-articulos'),
+    path("eliminar-articulos/<int:pk>/", ArticuloDeleteView.as_view(), name='eliminar-articulos'),
 ]

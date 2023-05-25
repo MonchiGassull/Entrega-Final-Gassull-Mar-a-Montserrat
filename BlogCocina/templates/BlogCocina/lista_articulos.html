@@ -15,9 +15,9 @@
                     <th>ID</th>
                     <th>Título</th>
                     <th>Subtítulo</th>
-                    <td>Ver</td>
-                    <td>Editar</td>
-                    <td>Eliminar</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 {% for articulo in object_list %}
                 <tr>
@@ -25,13 +25,15 @@
                     <td>{{ articulo.titulo }}</td>
                     <td>{{ articulo.subtitulo }}</td>
                     <td>
-                        Ver
+                        <a href="{% url 'ver-articulos' articulo.id %}">Leer Receta Completa</a>
                     </td>
                     <td>
                         <a href="{% url 'editar-articulos' articulo.id %}">Editar</a>
                     </td>
                     <td>
-                        <a href="{% url 'eliminar-articulos' articulo.id %}">Eliminar</a>
+                        <a href="{% url 'eliminar-articulos' articulo.id %}">
+                            <i class="bi bi-trash"></i>
+                        </a>
                     </td>   
                 </tr>
                 {% endfor %}
