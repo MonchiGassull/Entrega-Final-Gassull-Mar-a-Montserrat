@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio, name='inicio', ),
     path("notas/", include("BlogCocina.urls")),
+    path("sesion/", include("Perfiles.urls")),
 ]

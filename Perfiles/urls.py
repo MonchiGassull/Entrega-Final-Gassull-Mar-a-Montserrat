@@ -1,6 +1,6 @@
-from Perfiles.views import registro, login_view, CustomLogoutView
 from django.contrib import admin
 from django.urls import path, include
+from Perfiles.views import registro, login_view, CustomLogoutView
 
 urlpatterns = [
    path('registro/', registro, name="registro"),

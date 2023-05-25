@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 import datetime
 
 # Create your models here.
@@ -19,3 +20,4 @@ class Articulo(models.Model):
     subtitulo = models.TextField()
     desarrollo = models.TextField()
     autor = models.CharField(max_length=256)
+    creador = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
