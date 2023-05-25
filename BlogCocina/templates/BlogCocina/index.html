@@ -1,5 +1,5 @@
 {% extends "BlogCocina/base.html" %}
 
 {% block contenido %}
-<h1>Hola, bienvenid@ a nuestro blog sobre cocina!</h1>
+<h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
 {% endblock contenido %}
