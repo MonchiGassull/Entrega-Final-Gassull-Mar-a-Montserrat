@@ -13,7 +13,7 @@ class Lector(models.Model):
     email = models.EmailField()
     fecha_nacimiento = models.DateField()
     
-class Artículo(models.Model):
+class Articulo(models.Model):
     titulo = models.CharField(max_length=256)
     subtitulo = models.TextField()
     desarrollo = models.TextField()
