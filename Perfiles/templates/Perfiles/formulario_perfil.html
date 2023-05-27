@@ -1,7 +1,12 @@
 {% extends "BlogCocina/base.html" %}
 
 {% block contenido %}
-<p>Tu username es <b>{{ object.username }}</b></p>
+<p>Nombre y Apellido: <b>{{ object.first_name }} {{ object.last_name }}</b></p>
+<p>Username: <b>{{ object.username }}</b></p>
+<p>Mail: <b>{{ object.email }}</b></p>
+<br>
+<img src="{{ user.avatar.imagen.url }}" />
+<br><br>
 
 <h3>Editar datos:</h3>
 <form method="post">

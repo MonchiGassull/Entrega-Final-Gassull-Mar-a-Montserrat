@@ -1,6 +1,10 @@
 {% extends "BlogCocina/base.html" %}
 
 {% block contenido %}
-<h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
-<img src="{{ user.avatar.imagen.url }}" />
+{% load static %}
+<div class="text-center">
+    <h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
+    <br><br>
+    <img src="{% static 'imagenes/overcooked.jpg' %}" alt="Foto Inicio" />
+</div>
 {% endblock contenido %}

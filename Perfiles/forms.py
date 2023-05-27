@@ -7,7 +7,7 @@ class UserRegisterForm(UserCreationForm):
    password2 = forms.CharField(label='Repetir contraseña', widget=forms.PasswordInput) 
    class Meta:
         model = User
-        fields = ['last_name', 'first_name', 'email', 'password1', 'password2']
+        fields = ['last_name', 'first_name', 'email', 'username', 'password1', 'password2']
 
 class UserUpdateForm(forms.ModelForm):
         class Meta:

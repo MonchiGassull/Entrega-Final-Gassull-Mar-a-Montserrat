@@ -3,18 +3,29 @@
 {% block subtitulo %}Editar Artículo{% endblock subtitulo%}
 
 {% block contenido %}
-
-<p>
-    <strong>Título:</strong> {{object.titulo}}
-</p>
-<p>
-    <strong>Subtítulo:</strong> {{object.subtitulo}}
-</p>
+<div class="text-center">
+    <h1>
+        {{object.titulo}}
+    </h1>
+    <p>
+        {{object.subtitulo}}
+    </p>
+</div>
 <p>
     <strong>Autor:</strong> {{object.autor}}
 </p>
+<br>
+<div>
+    <div class="col-md-32">
+        <div class="col-md-2">
+            {{views.imagen.label}}
+        </div>
+        <div class="col-md-10">{{views.imagen}}
+    </div>
+</div>
+<br>
 <p>
-    <strong>Receta:</strong> {{object.desarrollo}}
+    <strong>Receta:</strong> {{object.cuerpo}}
 </p>
 
 <br>

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import inicio
+from blog.views import inicio, about
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('',inicio, name='inicio', ),
     path("notas/", include("BlogCocina.urls")),
     path("sesion/", include("Perfiles.urls")),
+    path('about/',about, name='about', ),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

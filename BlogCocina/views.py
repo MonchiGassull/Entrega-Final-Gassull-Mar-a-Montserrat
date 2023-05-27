@@ -3,7 +3,6 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-
 from BlogCocina.models import Escritor, Lector, Articulo
 
 class ArticuloListView(ListView):
@@ -12,7 +11,7 @@ class ArticuloListView(ListView):
     
 class ArticuloCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ('titulo', 'subtitulo', 'desarrollo', 'autor')
+    fields = ('titulo', 'subtitulo', 'cuerpo', 'autor', 'imagen')
     success_url = reverse_lazy('lista-articulos')
 
 class ArticuloDetailView(DetailView):
@@ -21,9 +20,10 @@ class ArticuloDetailView(DetailView):
     
 class ArticuloUpdateView(LoginRequiredMixin, UpdateView):
     model = Articulo
-    fields = ('titulo', 'subtitulo', 'desarrollo')
+    fields = ('titulo', 'subtitulo', 'cuerpo')
     success_url = reverse_lazy('lista-articulos')
     
 class ArticuloDeleteView(LoginRequiredMixin, DeleteView):
     model = Articulo
     success_url = reverse_lazy('lista-articulos')
+    
