@@ -26,5 +26,6 @@ urlpatterns = [
     path("crear-articulos/", ArticuloCreateView.as_view(), name='crear-articulos'),
     path("editar-articulos/<int:pk>/", ArticuloUpdateView.as_view(), name='editar-articulos'),
     path("eliminar-articulos/<int:pk>/", ArticuloDeleteView.as_view(), name='eliminar-articulos'),
-]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

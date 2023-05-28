@@ -8,7 +8,13 @@
         <a href="{% url 'crear-articulos' %}">Crear Receta</a>
         <br>
 
-      
+        {% if  not object_list %}
+
+        <br><br>
+        <h1>No hay entradas aún</h1>
+
+        {% else %}
+
         <table class="table">
             <tbody>
                 <tr>
@@ -25,6 +31,7 @@
                     <td>
                         <a href="{% url 'ver-articulos' articulo.id %}">Leer Receta Completa</a>
                     </td>
+                    {% if articulo.usuario == request.user %}
                     <td>
                         <a href="{% url 'editar-articulos' articulo.id %}">Editar</a>
                     </td>
@@ -32,11 +39,13 @@
                         <a href="{% url 'eliminar-articulos' articulo.id %}">
                             <i class="bi bi-trash"></i>
                         </a>
-                    </td>   
+                    </td>
+                    {% endif %}  
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        {% endif %}
     </div>
 </section>
 {% endblock contenido %}

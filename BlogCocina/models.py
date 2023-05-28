@@ -25,6 +25,7 @@ class Articulo(models.Model):
     cuerpo = models.TextField()
     autor = models.CharField(max_length=256)
     imagen = models.ImageField(upload_to="img/", null=True, blank=True)
-    creador = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    fecha = models.DateField(null=True, blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     def __str__(self):
         return f"{self.titulo} | {self.subtitulo} | {self.autor}"

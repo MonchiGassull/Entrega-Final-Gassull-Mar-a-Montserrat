@@ -14,13 +14,17 @@
 <p>
     <strong>Autor:</strong> {{object.autor}}
 </p>
+<p>
+    <strong>Fecha:</strong> {{object.fecha}}
+</p>
 <br>
 <div>
     <div class="col-md-32">
         <div class="col-md-2">
             {{views.imagen.label}}
         </div>
-        <div class="col-md-10">{{views.imagen}}
+        <div class="col-md-10">
+            <img src="{{ object.imagen.url }}" alt="Imagen del artículo">
     </div>
 </div>
 <br>
