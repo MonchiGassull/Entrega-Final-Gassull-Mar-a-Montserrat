@@ -2,8 +2,9 @@
 
 {% block contenido %}
 {% load static %}
+<h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
+<br><br>
 <div class="text-center">
-    <h1>Hola {{ user.first_name }}, bienvenid@ a nuestro blog sobre cocina!</h1>
-    <br><br>
+    <img src="{% static "imagenes/over.jpg" %}" alt="Foto incio" />
 </div>
 {% endblock contenido %}

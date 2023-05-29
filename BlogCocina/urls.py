@@ -19,6 +19,7 @@ from django.urls import path, include
 from BlogCocina.views import ArticuloListView, ArticuloCreateView, ArticuloDeleteView, ArticuloDetailView, ArticuloUpdateView
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.views import inicio, about
 
 urlpatterns = [
     path("articulos/", ArticuloListView.as_view(), name='lista-articulos'),
@@ -26,6 +27,8 @@ urlpatterns = [
     path("crear-articulos/", ArticuloCreateView.as_view(), name='crear-articulos'),
     path("editar-articulos/<int:pk>/", ArticuloUpdateView.as_view(), name='editar-articulos'),
     path("eliminar-articulos/<int:pk>/", ArticuloDeleteView.as_view(), name='eliminar-articulos'),
+    path('articulos/about/',about, name='about1'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
